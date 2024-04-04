@@ -5,6 +5,8 @@ import {employerAuth,jobseekerAuth} from "../middlewares/roleAuth.js"
 import {Job} from "../models/jobSchema.js"
 import cloudinary from "cloudinary"
 
+
+//Get all applications posted by particular Employer
 export const employerGetAllApplications = catchAsyncError(async(req,res,next)=>{
 
     const {role,_id} = req.user
@@ -19,6 +21,8 @@ export const employerGetAllApplications = catchAsyncError(async(req,res,next)=>{
 
 })
 
+
+//Get all applications by particular joobseeker
 export const jobseekerGetAllApplications = catchAsyncError(async(req,res,next)=>{
 
     const {role,_id} = req.user
@@ -32,6 +36,8 @@ export const jobseekerGetAllApplications = catchAsyncError(async(req,res,next)=>
 
 })
 
+
+//Deleting the submitted application by jobseeker
 export const jobseekerDeleteApplication = catchAsyncError(async (req,res,next)=>{
     const {role}= req.user
     jobseekerAuth(role,next);
@@ -48,6 +54,9 @@ export const jobseekerDeleteApplication = catchAsyncError(async (req,res,next)=>
     })
 
 })
+
+
+//Submitting Application
 
 export const postApplication = catchAsyncError(async(req,res,next)=>{
 
