@@ -133,5 +133,29 @@ export const deleteJob = catchAsyncError(async (req,res,next)=>{
 
 
 
-})    
+})
+
+//Get Specific JOB details
+
+export const getSpecificJob = catchAsyncError(async (req,res,next)=>{
+    const {id} = req.params;
+    try {
+        const job = await Job.findById(id);
+        if(!job){
+            return next(new ErrorHandler("Sorry, Job not found!",400));
+        }
+        res.status(200).json({
+            success: true,
+            message: "Job Details retrived successfully!",
+            job
+        })
+        
+
+    } catch (error) {
+
+        return next(new ErrorHandler("Invalid ID / CastError", 403));
+        
+    }
+
+})
 
