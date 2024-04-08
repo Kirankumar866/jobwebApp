@@ -86,11 +86,11 @@ p {
   flex-direction: column;
   justify-content: center;
   background: #fff;
-  padding: 20px 20px;
+  padding: 10px 20px;
 }
 .authPage .container .header {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   flex-direction: column;
 }
 .authPage .container .header h3 {
@@ -171,8 +171,8 @@ p {
 }
 .authPage .banner img {
   width: 100%;
-  width: 550px;
-  height: 550px;
+  width: 400px;
+  height: 400px;
 }
 @media (max-width: 1520px) {
   .authPage {
@@ -455,6 +455,7 @@ p {
   align-items: center;
   gap: 12px;
   background: #f1f3f6;
+  border-radius: 5px;
 }
 .categories .banner .card:hover {
   transition: all 0.3s;
@@ -516,8 +517,11 @@ p {
 .companies .container .banner {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  flex-shrink: 1;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 0px;
+  
 }
 .companies .container .banner .card {
   width: 340px;
@@ -526,6 +530,8 @@ p {
   background: #fff;
   padding: 20px;
   gap: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
 }
 .companies .container .banner .card:hover {
   transition: all 0.3s;
@@ -550,11 +556,14 @@ p {
 .companies .container .banner .card .content .text p:first-child {
   font-weight: bold;
   margin-bottom: 5px;
+  
 }
 .companies .container .banner .card .content .text p:last-child {
   font-size: 15px;
   color: gray;
+  
 }
+
 .companies .container .banner .card button {
   color: #2d5649;
   background: rgb(233, 249, 255);
@@ -563,6 +572,17 @@ p {
   border: none;
   padding: 7px 0;
   margin-top: 10px;
+}
+.companies .container .banner .card button:hover {
+  color: white;
+  background: rgb(64, 64, 64);
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 0;
+  margin-top: 10px;
+  cursor: pointer;
 }
 @media (max-width: 1520px) {
   .companies .container {
@@ -701,7 +721,9 @@ p {
   text-decoration: none;
   margin-top: 10px;
   width: fit-content;
+  border-radius: 30px;
 }
+
 @media (max-width: 1520px) {
   .jobDetail .container {
     min-width: 100%;

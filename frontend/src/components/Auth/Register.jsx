@@ -19,7 +19,7 @@ const Register = () => {
 
   const handleRegister = async (e)=>{
     e.preventDefault();
-    console.log("entered handle")
+    console.log("entered handleRegister")
     try {
       const response = await axios.post("http://localhost:5000/api/v1/user/register",
       {name,email,password,phone,role},

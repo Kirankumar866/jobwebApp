@@ -52,7 +52,7 @@ const App = () => {
         <Route exact path = "/register" Component = {Register}/>
         <Route exact path = "/" Component = {Home}/>
         <Route exact path = "/job/getalljobs" Component = {Jobs}/>
-        <Route exact path = "/job/:id" Component = {JobDetails}/>
+        <Route exact path = "/jobdetails/:id" Component = {JobDetails}/>
         <Route exact path = "/job/postjob" Component = {PostJob}/>
         <Route exact path = "/job/my" Component = {MyJobs}/>
         <Route exact path = "/application/:id" Component = {Application}/>
