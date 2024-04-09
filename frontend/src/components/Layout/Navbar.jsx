@@ -35,24 +35,24 @@ const Navbar = () => {
         </div>
         <ul className= {!show? "menu" : "show-menu menu"}>
           <li>
-            <Link to = "/" onClick={()=>{setShow(false)}}>Home</Link> 
+            <Link to = "/" onClick={()=>{setShow(false)}}><h6>Home</h6></Link> 
           </li>
           <li>
-          <Link to = "/job/getalljobs" onClick={()=>{setShow(false)}}>Jobs</Link>
+          <Link to = "/job/getalljobs" onClick={()=>{setShow(false)}}><h6>Jobs</h6></Link>
           </li>
           <li>
           <Link to = "/application/my" onClick={()=>{setShow(false)}}>
-              {user && user.role === "Employer" ? "APPLICANT'S APPLICATIONS" : "MY APPLICATIONS"}
+              <h6>{user && user.role === "Employer" ? "APPLICANT'S APPLICATIONS" : "MY APPLICATIONS"}</h6>
             </Link>
           </li>
           {
               user && user.role === "Employer"? (
                 <>
                 <li>
-                <Link to = "/job/postjob" onClick={()=>{setShow(false)}}>POST NEW JOB</Link>
+                <Link to = "/job/postjob" onClick={()=>{setShow(false)}}><h6>POST NEW JOB</h6></Link>
                 </li>
                 <li>
-                <Link to = "/job/my" onClick={()=>{setShow(false)}}>VIEW YOUR JOBS</Link>
+                <Link to = "/job/my" onClick={()=>{setShow(false)}}><h6>VIEW YOUR JOBS</h6></Link>
                 </li>
                 </>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
                 </>
               )
             }
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout}><h6>Logout</h6></button>
             <div className='hamburger'>
               <GiHamburgerMenu  onClick={()=>setShow(!show)}/>
 
