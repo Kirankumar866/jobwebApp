@@ -3,12 +3,12 @@ import {Link} from "react-router-dom"
 
 const NotFound = () => {
   return (
-    <>  
-            <img src="/pageNotFound.jpg" alt = "Not Found" width={500}/>
+    <div className='content'>  
+            <img src="/notfound.png" alt = "Not Found" />
             <Link path="/">Return to Home</Link>
 
         
-    </>
+    </div>
   )
 }
 

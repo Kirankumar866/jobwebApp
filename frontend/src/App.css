@@ -732,6 +732,7 @@ p {
 .application {
   display: flex;
   flex-direction: column;
+  min-height: 570px;
 }
 .application .container {
   min-width: 1500px;
@@ -741,21 +742,26 @@ p {
   flex-direction: column;
   text-align: center;
   padding: 50px 20px;
+  
 }
 .application .container form {
   display: flex;
-  flex-direction: column;
-  width: 550px;
+  flex-direction:row;
+  width: 90%;
   padding: 40px 20px;
   gap: 25px;
   margin: 0 auto;
   margin-top: 35px;
+  flex-wrap: wrap;
+  background-color: lightskyblue;
+  border-radius: 10px;
 }
 .application .container form input {
   border: none;
   font-size: 20px;
   border-bottom: 1px solid black;
   padding: 12px 4px;
+  width: 40%;
 }
 .application .container form textarea {
   width: 100%;
@@ -775,12 +781,24 @@ p {
   border: none;
   padding: 12px 30px;
   text-decoration: none;
-  width: 100%;
+  width: 20%;
 }
 .application .container form button:hover {
   background-color: #184235;
   transition: all 0.3s;
   cursor: pointer;
+}
+
+.application .container form div {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.application .container form div label {
+  align-self: flex-start;
+}
+.application .container form button {
+  display: block;
 }
 @media (max-width: 1520px) {
   .application .container {
@@ -1119,9 +1137,9 @@ p {
   color: #f1f3f6;
 }
 .myJobs .container .banner .card .button_wrapper .check_btn {
-  background: transparent;
-  color: #184235;
-  border: 1px solid #184235;
+  background: #184235;
+  color: white;
+  border: 0px solid #184235;
   border-radius: 7px;
   width: 50px;
   padding: 8px;
@@ -1132,9 +1150,29 @@ p {
 }
 .myJobs .container .banner .card .button_wrapper .check_btn:hover {
   transition: all 0.3s;
-  background: #184235;
+  background: #24634f;
   color: #f1f3f6;
+  cursor: pointer;
 }
+.myJobs .container .banner .card .button_wrapper .delete_btn {
+  background: #ea4742;
+  color: #f1f3f6;
+  border: 0px solid #184235;
+  border-radius: 7px;
+  width: 50px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.myJobs .container .banner .card .button_wrapper .delete_btn:hover {
+  transition: all 0.3s;
+  background: #d6534e;
+  color: #f1f3f6;
+  cursor: pointer;
+}
+
 .myJobs .container .banner .card .button_wrapper .cross_btn {
   background: transparent;
   color: #d9534f;
@@ -1146,11 +1184,13 @@ p {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  
 }
 .myJobs .container .banner .card .button_wrapper .cross_btn:hover {
   transition: all 0.3s;
   background: #d9534f;
   color: #f1f3f6;
+  cursor: pointer;
 }
 .myJobs .container .banner .card .button_wrapper .edit_btn_wrapper {
   gap: 20px;
@@ -1177,156 +1217,15 @@ p {
     gap: 8px;
   }
 }
-nav {
-  background: #18191c;
-  padding: 0 20px;
-}
-nav .container {
-  max-width: 1500px;
-  min-width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-nav .container .logo {
-  width: 120px;
-  height: 120px;
-}
-nav .container .logo img {
-  width: 100%;
-  height: 100%;
-}
-nav .menu {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-nav .menu button {
-  height: fit-content;
-  padding: 7px;
-  border: 1px solid #f1f3f6;
-  color: #f1f3f6;
-  background: transparent;
-  font-size: 20px;
-  font-weight: 300;
-}
-nav .menu button:hover {
-  color: #f1f3f6;
-  background: #184235;
-  transition: all 0.3s;
-  cursor: pointer;
-  font-weight: 500;
-  border: 1px solid #184235;
-}
-nav .menu li a {
-  color: #f1f3f6;
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 20px;
-  position: relative;
-}
-nav .menu li a:hover {
-  color: #2d5649;
-  transition: all 0.3s;
-}
-nav .menu li a::before {
-  content: "";
-  position: absolute;
-  background: #184235;
-  height: 1px;
-  width: 100%;
-  left: -100%;
-  bottom: 0;
-  transition: all 0.3s;
-}
-nav .menu li a:hover::before {
-  transition: all 0.3s;
-  left: 0;
-}
-nav .hamburger {
-  display: none;
-}
-@media (max-width: 1520px) {
-  nav .container {
-    min-width: 100%;
-  }
-}
-@media (max-width: 1130px) {
-  .page {
-    padding-top: 120px;
-  }
-  nav {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 10;
-  }
-  nav .hamburger {
-    display: block;
-    font-size: 35px;
-    color: #f1f3f6;
-  }
-  nav .container {
-    align-items: center;
-  }
-  .menu {
-    position: fixed;
-    top: 120px;
-    background: #f1f3f6;
-    left: -100%;
-    transition: all 0.3s;
-    width: 400px;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    gap: 30px;
-    align-items: flex-start;
-    padding-left: 25px;
-  }
-  nav .show-menu {
-    position: fixed;
-    top: 120px;
-    background: #f1f3f6;
-    transition: all 0.3s;
-    left: 0;
-    width: 400px;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    gap: 30px;
-    align-items: flex-start;
-    padding-left: 25px;
-    box-shadow: 9px 0px 16px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 9px 0px 16px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 9px 0px 16px 0px rgba(0, 0, 0, 0.75);
-  }
-  nav .show-menu li a {
-    color: #184235;
-    font-weight: 600;
-  }
-  nav .show-menu button {
-    color: #184235;
-    border: 1px solid #184235;
-    font-weight: 600;
-  }
-  nav .show-menu button:hover {
-    background: #18191c;
-    color: #f1f3f6;
-  }
-}
-@media (max-width: 490px) {
-  nav .menu {
-    width: 100%;
-  }
-}
+
 .notfound {
   min-height: 750px;
 }
 .notfound .content {
   display: flex;
-  flex-direction: column;
+  
   align-items: center;
+  justify-content: center;
 }
 .notfound .content a {
   font-size: 20px;
@@ -1378,3 +1277,12 @@ nav .hamburger {
     z-index: 11;
   }
 }
+
+footer {
+  position: sticky;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
+

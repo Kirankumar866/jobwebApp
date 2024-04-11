@@ -1,0 +1,231 @@
+/* Navbar Container */
+nav {
+    background: #18191c;
+    padding: 0 20px;
+  }
+  nav .container {
+    max-width: 1500px;
+    min-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  nav .container .logo {
+    width: 120px;
+    height: 120px;
+  }
+  nav .container .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  nav .menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  nav .menu button {
+    height: fit-content;
+    padding: 7px;
+    border: 1px solid #f1f3f6;
+    color: #f1f3f6;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  nav .menu button:hover {
+    color: #f1f3f6;
+    background: #184235;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid #184235;
+  }
+  nav .menu li a {
+    color: #f1f3f6;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 20px;
+    position: relative;
+  }
+  nav .menu li a:hover {
+    color: #2d5649;
+    transition: all 0.3s;
+  }
+  nav .menu li a::before {
+    content: "";
+    position: absolute;
+    background: #184235;
+    height: 1px;
+    width: 100%;
+    left: -100%;
+    bottom: 0;
+    transition: all 0.3s;
+  }
+  nav .menu li a:hover::before {
+    transition: all 0.3s;
+    left: 0;
+  }
+  @media (max-width: 870px){
+    nav .hamburger {
+      display: flex;
+    }
+  }
+  nav .hamburger {
+    display: none;
+  }
+  @media (max-width: 1520px) {
+    nav .container {
+      min-width: 100%;
+    }
+  }
+  @media (max-width: 1130px) {
+    .page {
+      padding-top: 120px;
+    }
+    nav {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+    nav .hamburger {
+      display: block;
+      font-size: 35px;
+      color: #f1f3f6;
+    }
+    nav .container {
+      align-items: center;
+    }
+    .menu {
+      position: fixed;
+      top: 120px;
+      background: #f1f3f6;
+      left: -100%;
+      transition: all 0.3s;
+      width: 400px;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      gap: 30px;
+      align-items: flex-start;
+      padding-left: 25px;
+    }
+    
+  }
+  @media (max-width: 490px) {
+    nav .menu {
+      width: 100%;
+    }
+  }
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 120px; /* Adjust logo size as needed */
+  }
+  
+  /* Menu and Show Menu */
+  .menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  
+  /* Hamburger Menu Icon */
+  .hamburger {
+    display: none; /* Hide by default on larger screens */
+  }
+  
+  @media (max-width: 700px) {
+    /* Show Hamburger Menu on smaller screens */
+    .menu {
+      display: none; /* Hide regular menu on smaller screens */
+    }
+    .menuHide{
+        display: none;
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger icon */
+      cursor: pointer;
+      font-size: 24px;
+      margin-right: 20px; /* Adjust margin as needed */
+    }
+  
+    
+  }
+  
+  /* Popup/Modal Styles */
+  .modal {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .popup-menu {
+    background-color: #ffffff;
+    width: 80%; /* Adjust width of popup menu */
+    max-width: 400px; /* Maximum width of popup menu */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    order:1;
+  }
+  
+  .popup-menu a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .popup-menu a:hover {
+    background-color: #f5f5f5; /* Hover background color */
+  }
+  
+  .popup-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    background-color: #f44336; /* Red color for logout button */
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .popup-menu button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+  .close{
+    position: fixed;
+    right: 13%;
+    top:33%;
+    order: 2;
+    width: 7%;
+    border-radius: 40%;
+    font-size: larger;
+  }
+  .close:hover{
+    background-color: red;
+    color: red;
+    
+  }

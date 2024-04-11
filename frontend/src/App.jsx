@@ -28,7 +28,6 @@ const App = () => {
       
       try {
         const {data} = await axios.get("http://localhost:5000/api/v1/user/getuser",{withCredentials:true});
-        await console.log(data.message)
         setUser(data.user);
         setIsAuthorized(true);
       } catch (error) {

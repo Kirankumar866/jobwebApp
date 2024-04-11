@@ -20,7 +20,7 @@ const HowitWorks = () => {
           </div>
           <div className="card">
             <MdFindInPage />
-            <p>Create Account</p>
+            <p>Find a Job</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus voluptatibus tempore 
               perspiciatis beatae minima odit impedit corrupti quasi sapiente, 
               corporis ut aut facilis aliquam animi provident, 
@@ -29,7 +29,7 @@ const HowitWorks = () => {
           </div>
           <div className="card">
             <IoMdSend/>
-            <p>Create Account</p>
+            <p>Apply Job</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus voluptatibus tempore 
               perspiciatis beatae minima odit impedit corrupti quasi sapiente, 
               corporis ut aut facilis aliquam animi provident, 

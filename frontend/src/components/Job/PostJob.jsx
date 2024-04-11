@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useContext,useEffect} from 'react';
 import { Context } from "../../main";
 import { useNavigate,Link} from "react-router-dom";
 import toast from "react-hot-toast";
@@ -263,13 +263,16 @@ const PostJob = () => {
   const navigateTo = useNavigate();
 
 
-  if (!isAuthorized) {
-    navigateTo("/login");
-  }
-  if (isAuthorized && user.role !== 'Employer') {
-    toast.error(`${user.role} can't post job`)
-    navigateTo('/');
-  }
+  useEffect(() => {
+    if (!isAuthorized) {
+      navigateTo('/login');
+    }
+
+    if (isAuthorized && user.role !== 'Employer') {
+      toast.error(`${user.role} does not have permission to post jobs.`);
+      navigateTo('/');
+    }
+  }, [isAuthorized, user, navigateTo]);
 
   const handlePost = async(e)=>{
     e.preventDefault();
@@ -332,7 +335,7 @@ const PostJob = () => {
     <>
     <div className="job_post page">
       <div className="container">
-        <h3>POST NEW JOB</h3>
+        <h5>POST NEW JOB</h5>
         <form onSubmit={handlePost} >
           <div className="wrapper">
             <input type="text"  value = {title} onChange={(e)=>{setTitle(e.target.value)}} placeholder='Job Title'/>
