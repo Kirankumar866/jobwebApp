@@ -88,13 +88,6 @@ export const updateJob = catchAsyncError(async (req,res,next)=>{
     if (job.postedBy.toString()!== _id.toString()) {
         return next(new ErrorHandler("You are not the author of the post", 403));
     }
-
-    // If the user is the author, proceed with the update
-    job = await Job.findByIdAndUpdate(id, req.body, {
-        new: true,
-        runValidators: true,
-        useFindAndModify: false,
-    });
     job = await Job.findByIdAndUpdate(id,req.body,{
         new: true,
         runValidators: true,
