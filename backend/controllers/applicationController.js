@@ -67,7 +67,7 @@ export const postApplication = catchAsyncError(async(req,res,next)=>{
         return next(new ErrorHandler("Resume file required!"));
     }
     const {resume} = req.files;
-    console.log(req)
+   
     const allowedFormats = ["image/png", "image/jpg", "image/jpeg", "image/webp"]
     if(!allowedFormats.includes(resume.mimetype) || !isValidFileExtension(resume.name)){
         return next(new ErrorHandler("Resume file should be in a PNG,JPG OR WEBP",400));
