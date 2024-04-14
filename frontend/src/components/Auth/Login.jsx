@@ -28,7 +28,8 @@ const Login = () => {
         }
         }
       )
-      console.log("response",response)
+      console.log("hi")
+      
       toast.success(response.data.message)
       setIsAuthorized(true)
       setEmail("");
