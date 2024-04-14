@@ -13,7 +13,7 @@ const app = express();
 dotenv.config({path: "./config/config.env"});
 
 app.use(cors({
-    origin: "http://localhost:5173", // Allow requests from this origin
+    origin: "https://jobzee-neon.vercel.app/", // Allow requests from this origin
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // Allow specified HTTP methods
     credentials: true // Allow credentials (cookies, authorization headers)
   }));
@@ -27,9 +27,7 @@ app.use(fileUpload({
     tempFileDir: "/tmp/",
 }));
 
-app.get("/",(req,res)=>{
-    res.json("Hello")
-})
+
 
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/job", jobRouter);
