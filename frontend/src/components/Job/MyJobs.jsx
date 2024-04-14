@@ -108,7 +108,7 @@ const MyJobs = () => {
 
   //Delete Job
   const handleDeleteJob = async(jobId)=>{
-    await axios.delete(`https://jobweb-app.vercel.app/api/v1/job/deletejob/${jobId}`,{withCredentials: true})
+    await axios.delete(`https://nice-rose-capybara-cape.cyclic.app/api/v1/job/deletejob/${jobId}`,{withCredentials: true})
     .then((res)=>{
       toast.success(res.data.message);
       setMyJobs((prevJobs)=>prevJobs.filter((job)=>job._id!==jobId));

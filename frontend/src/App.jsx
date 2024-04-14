@@ -27,7 +27,7 @@ const App = () => {
     const fetchUser  = async()=>{
       
       try {
-        const {data} = await axios.get("https://jobweb-app.vercel.app/api/v1/user/getuser",{withCredentials:true});
+        const {data} = await axios.get("https://nice-rose-capybara-cape.cyclic.app/api/v1/user/getuser",{withCredentials:true});
         setUser(data.user);
         setIsAuthorized(true);
       } catch (error) {

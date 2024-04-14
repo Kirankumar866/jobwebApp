@@ -13,7 +13,7 @@ const JobDetails = () => {
   useEffect(()=>{
     const fetchJobDetails = async()=>{
       try {
-        await axios.get(`https://jobweb-app.vercel.app/api/v1/job/jobdetails/${id}`, {withCredentials: true})
+        await axios.get(`https://nice-rose-capybara-cape.cyclic.app/api/v1/job/jobdetails/${id}`, {withCredentials: true})
       .then((res)=>{
       setJobDetails(res.data.job);
       

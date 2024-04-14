@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get('https://jobweb-app.vercel.app/api/v1/user/logout', { withCredentials: true });
+      const response = await axios.get('https://nice-rose-capybara-cape.cyclic.app/api/v1/user/logout', { withCredentials: true });
       setShow(false)
       toast.success(response.data.message);
 

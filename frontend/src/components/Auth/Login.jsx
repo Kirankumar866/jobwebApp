@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     console.log("entered handleLogin")
     try {
-      const response = await axios.post("https://jobweb-app.vercel.app/api/v1/user/login",
+      const response = await axios.post("https://nice-rose-capybara-cape.cyclic.app/api/v1/user/login",
       {email,password,role},
       {
         withCredentials:true, 
