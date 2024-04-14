@@ -26,6 +26,8 @@ export const login =  catchAsyncError(async(req,res,next)=>{
         return next(new ErrorHandler("Provide email,password and role",400));
     }
 
+    console.log(req.body)
+
     const user = await User.findOne({email}).select("+password");
     if(!user){
         return next(new ErrorHandler("Invalid email address",400));
@@ -56,7 +58,7 @@ export const getUser = catchAsyncError((req,res,next)=>{
 
     const user = req.user;
     
-
+    console.log("user",user)
     res.status(200).json({
         success: true,
         user
