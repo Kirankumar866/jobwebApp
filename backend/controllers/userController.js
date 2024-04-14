@@ -26,7 +26,9 @@ export const login =  catchAsyncError(async(req,res,next)=>{
         return next(new ErrorHandler("Provide email,password and role",400));
     }
 
-    console.log(req.body)
+    res.json({
+        "user" : req.body
+    })
 
     const user = await User.findOne({email}).select("+password");
     if(!user){
