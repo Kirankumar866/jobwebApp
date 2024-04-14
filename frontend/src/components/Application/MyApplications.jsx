@@ -19,12 +19,12 @@ const MyApplications = () => {
   useEffect(() => {
     try {
       if (isAuthorized && user.role === 'Employer'){
-         axios.get("http://localhost:5000/api/v1/application/employer/getallapplications",{withCredentials: true}).then((res)=>{
+         axios.get("https://good-yak-parka.cyclic.app/api/v1/application/employer/getallapplications",{withCredentials: true}).then((res)=>{
           setApplications(res.data.applications)
         })  
       }
       else{
-         axios.get("http://localhost:5000/api/v1/application/jobseeker/getallapplications",{withCredentials: true}).then((res)=>{
+         axios.get("https://good-yak-parka.cyclic.app/api/v1/application/jobseeker/getallapplications",{withCredentials: true}).then((res)=>{
           setApplications(res.data.applications)
         })
       }
@@ -39,7 +39,7 @@ const MyApplications = () => {
   }
 
   const handleDeleteApplication = async(id)=>{
-    await axios.delete(`http://localhost:5000/api/v1/application/deletejobseekerapplication/${id}`,{withCredentials: true})
+    await axios.delete(`https://good-yak-parka.cyclic.app/api/v1/application/deletejobseekerapplication/${id}`,{withCredentials: true})
     .then((res)=>{
       toast.success(res.data.message);
       setApplications((prevApplications)=>prevApplications.filter((application)=>application._id!==id));

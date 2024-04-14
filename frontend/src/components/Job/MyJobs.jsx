@@ -68,7 +68,7 @@ const MyJobs = () => {
   useEffect(()=>{
     const fetchMyJobs = async ()=>{
       try {
-        const {data} = await axios.get("http://localhost:5000/api/v1/job/getmyjobs",{withCredentials: true})
+        const {data} = await axios.get("https://good-yak-parka.cyclic.app/api/v1/job/getmyjobs",{withCredentials: true})
         setMyJobs(data.myJobs)
         
       } catch (error) {
@@ -95,7 +95,7 @@ const MyJobs = () => {
 
     const updateJob = myJobs.find((job)=>job?._id === jobId);
     console.log(updateJob)
-    await axios.put(`http://localhost:5000/api/v1/job/updatejob/${jobId}`, updateJob,{
+    await axios.put(`https://good-yak-parka.cyclic.app/api/v1/job/updatejob/${jobId}`, updateJob,{
       withCredentials:true
     }).then((res)=>{
       toast.success(res.data.message);
@@ -108,7 +108,7 @@ const MyJobs = () => {
 
   //Delete Job
   const handleDeleteJob = async(jobId)=>{
-    await axios.delete(`http://localhost:5000/api/v1/job/deletejob/${jobId}`,{withCredentials: true})
+    await axios.delete(`https://good-yak-parka.cyclic.app/api/v1/job/deletejob/${jobId}`,{withCredentials: true})
     .then((res)=>{
       toast.success(res.data.message);
       setMyJobs((prevJobs)=>prevJobs.filter((job)=>job._id!==jobId));

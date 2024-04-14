@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault();
     console.log("entered handleRegister")
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/user/register",
+      const response = await axios.post("https://good-yak-parka.cyclic.app/api/v1/user/register",
       {name,email,password,phone,role},
       {
         withCredentials:true, 
