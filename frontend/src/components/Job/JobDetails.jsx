@@ -13,7 +13,7 @@ const JobDetails = () => {
   useEffect(()=>{
     const fetchJobDetails = async()=>{
       try {
-        await axios.get(`https://nice-rose-capybara-cape.cyclic.app/api/v1/job/jobdetails/${id}`, {withCredentials: true})
+        await axios.get(`http://localhost:5000/api/v1/job/jobdetails/${id}`, {withCredentials: true})
       .then((res)=>{
       setJobDetails(res.data.job);
       

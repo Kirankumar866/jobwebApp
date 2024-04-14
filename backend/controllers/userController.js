@@ -5,7 +5,7 @@ import {sendToken} from "../utils/jwtToken.js"
 
 export const register = catchAsyncError(async(req,res,next)=>{
     const {name,email,phone, role, password} = req.body;
-    console.log(req.body)
+    
     if(!name || !email || !phone || !role || !password){
         return next(new ErrorHandler("Please fill full registration form"));
     }
@@ -25,10 +25,6 @@ export const login =  catchAsyncError(async(req,res,next)=>{
     if(!email || !password|| !role){
         return next(new ErrorHandler("Provide email,password and role",400));
     }
-
-    res.json({
-        "user" : req.body
-    })
 
     const user = await User.findOne({email}).select("+password");
     if(!user){

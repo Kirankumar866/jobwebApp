@@ -299,7 +299,7 @@ const PostJob = () => {
     }
 
     
-    await axios.post("https://nice-rose-capybara-cape.cyclic.app/api/v1/job/postjob",payload,
+    await axios.post("http://localhost:5000/api/v1/job/postjob",payload,
 
        {
         withCredentials:true, 

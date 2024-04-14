@@ -39,7 +39,7 @@ const MyApplications = () => {
   }
 
   const handleDeleteApplication = async(id)=>{
-    await axios.delete(`https://nice-rose-capybara-cape.cyclic.app/api/v1/application/deletejobseekerapplication/${id}`,{withCredentials: true})
+    await axios.delete(`http://localhost:5000/api/v1/application/deletejobseekerapplication/${id}`,{withCredentials: true})
     .then((res)=>{
       toast.success(res.data.message);
       setApplications((prevApplications)=>prevApplications.filter((application)=>application._id!==id));
