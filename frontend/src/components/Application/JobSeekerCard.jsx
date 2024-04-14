@@ -1,3 +1,4 @@
+import {FaTrash} from "react-icons/fa";
 
 const JobSeekerCard = (props)=>{
     const {application, openModal, deleteApplication} = props
@@ -30,12 +31,7 @@ const JobSeekerCard = (props)=>{
             <div className="resume">
                 <img src= {application.resume.url} alt = "resume" onClick={()=>{openModal(application.resume.url)}} />
             </div>
-            <div className="btn_area">
-                <button onClick={()=>{deleteApplication(application._id)}}>
-                    Delete
-
-                </button>
-            </div>
+            <button className='delete_btn' onClick={() => deleteApplication(application?._id)}><FaTrash/></button>
         </div>
         </>
 

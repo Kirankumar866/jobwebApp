@@ -2,6 +2,7 @@ import React from 'react';
 import {FaUser} from "react-icons/fa";
 import {MdFindInPage} from "react-icons/md";
 import {IoMdSend} from "react-icons/io";
+import {Link} from "react-router-dom"
 
 const HowitWorks = () => {
   return (
@@ -18,7 +19,7 @@ const HowitWorks = () => {
               debitis modi voluptas sequi.</p>
 
           </div>
-          <div className="card">
+          <Link to = "/job/getalljobs" className="card" >
             <MdFindInPage />
             <p>Find a Job</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus voluptatibus tempore 
@@ -26,8 +27,8 @@ const HowitWorks = () => {
               corporis ut aut facilis aliquam animi provident, 
               debitis modi voluptas sequi.</p>
               
-          </div>
-          <div className="card">
+          </Link>
+          <Link to = "/job/getalljobs" className="card">
             <IoMdSend/>
             <p>Apply Job</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus voluptatibus tempore 
@@ -35,7 +36,7 @@ const HowitWorks = () => {
               corporis ut aut facilis aliquam animi provident, 
               debitis modi voluptas sequi.</p>
               
-          </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ const Application = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [resume, setResume] = useState(null);
-
   const { isAuthorized,user } = useContext(Context);
   const navigateTo = useNavigate();
 
@@ -50,13 +49,15 @@ const Application = () => {
     
 
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/application/submitapplication",formData,
+      const response = await axios.post("https://jobweb-app.vercel.app/api/v1/application/submitapplication",formData,
       {withCredentials:true,
       headers : {
         "Content-Type": "multipart/form-data",
       }})
 
       await console.log(response)
+
+      setShowConfetti(true)
 
       
       setName("");
@@ -66,6 +67,7 @@ const Application = () => {
       setCoverLetter("");
       setResume(null);
       toast.success(response.data.message);
+      
       navigateTo("/job/getalljobs")
 
       
@@ -83,13 +85,13 @@ const Application = () => {
   return (
     <section className='application'>
       <div className="container">
-        <h6>Application Form</h6>
+        <h5>Application Form</h5>
         <form onSubmit={handleApplication}>
-          <input type="text"  value = {name} onChange={(e)=>{setName(e.target.value)}} placeholder='Your Name'/>
-          <input type="text"  value = {email} onChange={(e)=>{setEmail(e.target.value)}} placeholder='Your Email'/>
-          <input type="text"  value = {phone} onChange={(e)=>{setPhone(e.target.value)}} placeholder='Phone Number'/>
-          <input type="text"  value = {address} onChange={(e)=>{setAddress(e.target.value)}} placeholder='Your Address'/>
-          <textarea value = {coverLetter} onChange={(e)=>{setCoverLetter(e.target.value)}} placeholder='Write Coverletter'/>
+          <input type="text"  value = {name} onChange={(e)=>{setName(e.target.value)}} placeholder='Name'/>
+          <input type="text"  value = {email} onChange={(e)=>{setEmail(e.target.value)}} placeholder='Email'/>
+          <input type="number"  value = {phone} onChange={(e)=>{setPhone(e.target.value)}} placeholder="Phone"/>
+          <input type="text"  value = {address} onChange={(e)=>{setAddress(e.target.value)}} placeholder='Address'/>
+          <textarea value = {coverLetter} onChange={(e)=>{setCoverLetter(e.target.value)}} placeholder='Coverletter'/>
           <div>
             <label>Select Resume</label>
             <input type="file" accept=".png, .jpg, .webp" onChange={handleFileChange} />

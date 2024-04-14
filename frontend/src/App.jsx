@@ -21,13 +21,13 @@ import {Toaster} from "react-hot-toast"
 
 const App = () => {
 
-  const {isAuthorized, setIsAuthorized, setUser,user} = useContext(Context);
+  const {isAuthorized, setIsAuthorized, setUser} = useContext(Context);
 
   useEffect(()=>{
     const fetchUser  = async()=>{
       
       try {
-        const {data} = await axios.get("http://localhost:5000/api/v1/user/getuser",{withCredentials:true});
+        const {data} = await axios.get("https://jobweb-app.vercel.app/api/v1/user/getuser",{withCredentials:true});
         setUser(data.user);
         setIsAuthorized(true);
       } catch (error) {

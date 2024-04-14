@@ -11,11 +11,14 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthorized, setIsAuthorized, user } = useContext(Context);
   const navigateTo = useNavigate();
+  
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/user/logout', { withCredentials: true });
+      const response = await axios.get('https://jobweb-app.vercel.app/api/v1/user/logout', { withCredentials: true });
+      setShow(false)
       toast.success(response.data.message);
+
       setIsAuthorized(false);
       navigateTo('/login');
     } catch (error) {

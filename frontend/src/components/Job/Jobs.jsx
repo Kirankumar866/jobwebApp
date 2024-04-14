@@ -15,7 +15,7 @@ const Jobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        await axios.get("http://localhost:5000/api/v1/job/getalljobs", { withCredentials: true })
+        await axios.get("https://jobweb-app.vercel.app/api/v1/job/getalljobs", { withCredentials: true })
         .then((res)=>{
           setJobs(res.data.jobs)
         })

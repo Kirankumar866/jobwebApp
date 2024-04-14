@@ -109,11 +109,13 @@ p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 60%;
 }
 .authPage .container form .inputTag {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width:100%;
 }
 .authPage .container form .inputTag div {
   display: flex;
@@ -133,7 +135,7 @@ p {
   outline: none;
 }
 .authPage .container form .inputTag div svg {
-  width: 10%;
+  width: 20%;
   font-size: 1.5rem;
   background: #2d5649;
   height: 100%;
@@ -144,7 +146,6 @@ p {
   padding: 12px;
   text-align: center;
   border: none;
-  margin-top: 25px;
   font-weight: 700;
   color: #fff;
   background: #2d5649;
@@ -155,7 +156,7 @@ p {
   padding: 12px;
   text-align: center;
   border: 1px solid #2d5649;
-  margin-top: 25px;
+
   font-weight: 700;
   color: #2d5649;
   font-size: 1.2rem;
@@ -395,6 +396,8 @@ p {
   padding: 30px 50px;
   gap: 12px;
   justify-content: center;
+  list-style-type: none;
+  text-decoration: none;
 }
 .howitworks .container .banner .card:nth-child(2) {
   background: #18191c;
@@ -753,7 +756,7 @@ p {
   margin: 0 auto;
   margin-top: 35px;
   flex-wrap: wrap;
-  background-color: lightskyblue;
+  background-color: rgb(220, 217, 217);
   border-radius: 10px;
 }
 .application .container form input {
@@ -762,6 +765,7 @@ p {
   border-bottom: 1px solid black;
   padding: 12px 4px;
   width: 40%;
+  border-radius: 10px;
 }
 .application .container form textarea {
   width: 100%;
@@ -792,13 +796,30 @@ p {
 .application .container form div {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  
 }
 .application .container form div label {
   align-self: flex-start;
 }
 .application .container form button {
   display: block;
+  border-radius: 10px;
+
+}
+.application .container form button:hover {
+  background-color: #39826b;
+  transition: all 0.3s;
+  
+}
+@media screen and (max-width: 775px) {
+  .application .container form div input {
+    width: 100%;
+  }
+  .application .container form button {
+    width: 100%;
+  
+  }
+  
 }
 @media (max-width: 1520px) {
   .application .container {
@@ -816,22 +837,30 @@ p {
 .my_applications .container {
   max-width: 1500px;
   min-width: 1500px;
-  margin: 0 auto;
+  
   display: flex;
   flex-direction: column;
   gap: 35px;
 }
 .job_seeker_card {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  align-items:center;
   border-bottom: 1px solid gainsboro;
   padding: 20px 0;
+  
+  width:95%;
 }
 .job_seeker_card .detail {
   flex: 3;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  align-self: flex-start;
+  
+  
 }
 .job_seeker_card .detail {
   flex: 2;
@@ -855,19 +884,23 @@ p {
   top: 0;
   left: 0;
 }
-.job_seeker_card .btn_area {
-  flex: 1;
+.job_seeker_card .delete_btn {
+  background: #ea4742;
+  color: #f1f3f6;
+  border: 0px solid #184235;
+  border-radius: 7px;
+  width: 50px;
+  padding: 8px;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.job_seeker_card .btn_area button {
-  background: #d9534f;
-  color: #fff;
-  border: none;
-  padding: 10px 30px;
+  align-items: center;
   font-size: 20px;
-  font-weight: 500;
+}
+.job_seeker_card .delete_btn:hover {
+  transition: all 0.3s;
+  background: #d6534e;
+  color: #f1f3f6;
+  cursor: pointer;
 }
 @media (max-width: 1520px) {
   .my_applications .container {
