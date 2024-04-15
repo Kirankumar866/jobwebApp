@@ -17,7 +17,7 @@ dotenv.config({path: "./config/config.env"});
 
 // Apply CORS Middleware
 app.use(cors({
-  origin : ['https://661d0c4dbee74b0078cfac1a--magenta-nasturtium-6681e0.netlify.app'],
+  origin : ['https://jobzee-neon.vercel.app'],
   methods: ['GET', 'POST', 'DELETE', 'PUT'],
   credentials: true
 }));
