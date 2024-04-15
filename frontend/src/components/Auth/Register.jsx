@@ -48,7 +48,7 @@ const Register = () => {
       
     }
   }
-  console.log("isAuthorized", isAuthorized)
+  
 
   if(isAuthorized){
     

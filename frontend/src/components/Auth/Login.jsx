@@ -46,7 +46,7 @@ const Login = () => {
       
     }
   }
-  console.log("isAuthorized", isAuthorized)
+  
 
   if(isAuthorized){
     
