@@ -15,7 +15,7 @@ const Jobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        await axios.get("https://good-yak-parka.cyclic.app/api/v1/job/getalljobs", { withCredentials: true })
+        await axios.get("https://weak-moth-belt.cyclic.app/api/v1/job/getalljobs", { withCredentials: true })
         .then((res)=>{
           setJobs(res.data.jobs)
         })

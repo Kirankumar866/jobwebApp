@@ -27,7 +27,7 @@ const App = () => {
     const fetchUser  = async()=>{
       
       try {
-        const {data} = await axios.get("https://good-yak-parka.cyclic.app/api/v1/user/getuser",{withCredentials:true});
+        const {data} = await axios.get("https://weak-moth-belt.cyclic.app/api/v1/user/getuser",{withCredentials:true});
         setUser(data.user);
         setIsAuthorized(true);
       } catch (error) {

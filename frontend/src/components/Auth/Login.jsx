@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     console.log("entered handleLogin")
     try {
-      const response = await axios.post("https://good-yak-parka.cyclic.app/api/v1/user/login",
+      const response = await axios.post("https://weak-moth-belt.cyclic.app/api/v1/user/login",
       {email,password,role},
       {
         withCredentials:true, 

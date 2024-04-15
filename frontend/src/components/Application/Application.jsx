@@ -49,7 +49,7 @@ const Application = () => {
     
 
     try {
-      const response = await axios.post("https://good-yak-parka.cyclic.app/api/v1/application/submitapplication",formData,
+      const response = await axios.post("https://weak-moth-belt.cyclic.app/api/v1/application/submitapplication",formData,
       {withCredentials:true,
       headers : {
         "Content-Type": "multipart/form-data",
