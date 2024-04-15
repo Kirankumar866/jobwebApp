@@ -17,7 +17,7 @@ dotenv.config({path: "./config/config.env"});
 
 // Apply CORS Middleware
 app.use(cors({
-  origin : ['https://jobzee-neon.vercel.app'],
+  origin : "https://jobzee-neon.vercel.app",
   methods: ['GET', 'POST', 'DELETE', 'PUT'],
   credentials: true
 }));
