@@ -12,12 +12,21 @@ import { errorMiddleware } from "./middlewares/error.js";
 const app = express();
 dotenv.config({path: "./config/config.env"});
 
-app.use(cors({
-    origin: "http://localhost:5173", // Allow requests from this origin
-    methods: ['GET', 'POST', 'DELETE', 'PUT'], // Allow specified HTTP methods
-    credentials: true // Allow credentials (cookies, authorization headers)
-  }));
+const allowedOrigins = ['http://localhost:5173', 'https://example.com'];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  credentials: true
+};
 
+// Apply CORS Middleware
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
