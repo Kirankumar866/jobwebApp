@@ -12,7 +12,8 @@ import { errorMiddleware } from "./middlewares/error.js";
 const app = express();
 dotenv.config({path: "./config/config.env"});
 
-const allowedOrigins = ['https://jobzee-neon.vercel.app'];
+const allowedOrigins = ['https://curious-raindrop-3e910c.netlify.app'];
+
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
