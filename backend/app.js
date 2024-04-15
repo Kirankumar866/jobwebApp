@@ -14,14 +14,13 @@ dotenv.config({path: "./config/config.env"});
 
 
 
-const corsOptions = {
-  origin: "*",
-  methods: ['GET', 'POST', 'DELETE', 'PUT'],
-  credentials: true
-};
 
 // Apply CORS Middleware
-app.use(cors(corsOptions));
+app.use(cors({
+  origin : ['https://661d0c4dbee74b0078cfac1a--magenta-nasturtium-6681e0.netlify.app'],
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  credentials: true
+}));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
